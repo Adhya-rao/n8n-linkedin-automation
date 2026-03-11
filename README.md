@@ -22,10 +22,9 @@ Add Basic LLM Chain Node.
 
 Connect Google Gemini Chat Model.
 
-Prompt summarizes the article into key insights for social media.
+The prompt summarizes the article into key insights.
 
-Example prompt:
-
+Example Prompt
 You are a social media strategist.
 
 Analyze the article and create a summary:
@@ -44,21 +43,20 @@ Connect it to the summary node output.
 
 Generate a professional LinkedIn post.
 
-Example prompt:
-
+Example Prompt
 Write a LinkedIn post discussing key AI industry insights.
 
 Requirements:
-• Professional tone
-• Clear structure
-• Industry analysis
-• Encourage discussion
-• Include a call to action
+- Professional tone
+- Clear structure
+- Industry analysis
+- Encourage discussion
+- Include a call to action
 4. LinkedIn Developer App Setup
 
 Create an app in **LinkedIn Developer Portal.
 
-Steps:
+Steps
 
 Go to LinkedIn Developer Apps
 
@@ -72,7 +70,7 @@ Company Page
 
 Logo
 
-Enable APIs:
+Enable APIs
 
 Share on LinkedIn
 
@@ -94,20 +92,18 @@ Add OAuth Redirect URL from n8n to LinkedIn App settings.
 
 Add LinkedIn Node in the workflow.
 
-Configuration:
+Configuration
 
-Operation: Create Post
+Operation → Create Post
 
 Select LinkedIn account
 
-Add generated text from AI node.
+Add generated text from the AI node
 
-The workflow will automatically post to LinkedIn.
+The workflow automatically publishes the post on LinkedIn.
 
 Workflow Architecture
-
 Google Sheets → AI Summary → LinkedIn Content Generator → LinkedIn Auto Post
-
 Technologies Used
 
 n8n – Workflow Automation
@@ -116,11 +112,11 @@ Google Gemini – AI Content Generation
 
 **LinkedIn API – Social Media Posting
 
-Google Sheets – Data Trigger Source
+**Google Sheets – Data Trigger Source
 
 Future Improvements
 
-Add support for multiple platforms
+Multi-platform posting
 
 Content scheduling
 
