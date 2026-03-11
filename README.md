@@ -1,7 +1,7 @@
 AI Social Media Content Automation (LinkedIn)
 Overview
 
-This project automates AI-powered LinkedIn content creation and posting.
+Automates AI-powered LinkedIn content creation and posting.
 
 The workflow reads article content, summarizes it using AI, generates a LinkedIn post, and automatically publishes it.
 
@@ -10,7 +10,7 @@ Built using n8n workflow automation and Google Gemini AI model.
 Workflow Steps
 1. Google Sheets Trigger
 
-Create a Google Sheet to store article links or text.
+Create a Google Sheets document to store article links or text.
 
 Add Google Sheets Trigger Node in n8n.
 
@@ -54,7 +54,7 @@ Requirements:
 - Include a call to action
 4. LinkedIn Developer App Setup
 
-Create an app in **LinkedIn Developer Portal.
+Create an app in LinkedIn Developer Portal.
 
 Steps
 
