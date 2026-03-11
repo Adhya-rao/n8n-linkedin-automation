@@ -1,53 +1,30 @@
-AI Social Media Content Automation (LinkedIn)
-Overview
+🚀 AI Social Media Content Automation (LinkedIn)
+📌 Overview
 
-This project automates AI-powered LinkedIn content creation and publishing using workflow automation.
+This project automates AI-powered LinkedIn content creation and publishing.
 
-The system reads article content from Google Sheets, summarizes it using Google Gemini AI, generates a professional LinkedIn post, and automatically publishes it through the LinkedIn API.
+The workflow reads article content from Google Sheets, summarizes it using Google Gemini AI, generates a professional LinkedIn post, and automatically publishes it using the LinkedIn API.
 
 The automation is built using n8n workflow automation, enabling a seamless pipeline from content input to social media publishing.
 
-Key Features
+⚙️ Workflow Steps
+1️⃣ Google Sheets Trigger
 
-Automated AI-powered article summarization
+Create a Google Sheet to store article links or text.
 
-LinkedIn post generation with professional tone
+Add a Google Sheets Trigger Node in n8n.
 
-Auto publishing to LinkedIn
+The workflow starts automatically when a new row is added.
 
-Trigger-based workflow using Google Sheets
+2️⃣ Summarize Article Using AI
 
-Fully automated content pipeline
+Add a Basic LLM Chain Node.
 
-Workflow Architecture
-Google Sheets Trigger
-        ↓
-AI Article Summarization (Gemini)
-        ↓
-LinkedIn Post Generation
-        ↓
-LinkedIn API Auto Publishing
-Workflow Steps
-1. Google Sheets Trigger
+Connect the Google Gemini Chat Model.
 
-A Google Sheet is used to store article content or links.
+The prompt summarizes the article into key insights.
 
-When a new row is added, the n8n workflow is automatically triggered.
-
-Configuration
-
-Create a Google Sheet
-
-Add article text or link in a row
-
-Connect the Google Sheets Trigger Node in n8n
-
-2. Article Summarization using AI
-
-The article content is summarized using the Google Gemini Chat Model through an LLM Chain Node.
-
-Prompt Example
-
+Example Prompt
 You are a social media strategist.
 
 Analyze the article and create a summary:
@@ -58,14 +35,15 @@ Analyze the article and create a summary:
 5. Keep it under 200 words
 
 Article: {{$json.text}}
-3. LinkedIn Post Generation
+3️⃣ Generate LinkedIn Post
 
-The summarized content is then used to generate a professional LinkedIn post.
+Add another LLM Chain Node.
 
-Another LLM Chain Node processes the summary and converts it into a structured LinkedIn post.
+Connect it to the summary node output.
 
-Prompt Example
+Generate a professional LinkedIn post.
 
+Example Prompt
 Write a LinkedIn post discussing key AI industry insights.
 
 Requirements:
@@ -74,17 +52,17 @@ Requirements:
 - Industry analysis
 - Encourage discussion
 - Include a call to action
-4. LinkedIn Developer App Setup
+4️⃣ LinkedIn Developer App Setup
 
-To enable automated posting, a LinkedIn Developer App must be created.
+Create an app in the LinkedIn Developer Portal.
 
-Steps:
+Steps
 
-Go to LinkedIn Developer Portal
+Go to LinkedIn Developer Apps
 
 Click Create App
 
-Enter required details:
+Enter the following details:
 
 App Name
 
@@ -92,72 +70,64 @@ Company Page
 
 Logo
 
-Enable APIs:
+Enable the APIs:
 
 Share on LinkedIn
 
 Sign in with LinkedIn using OpenID Connect
 
-5. OAuth Authentication
+5️⃣ OAuth Authentication
 
-Authentication is required for posting on behalf of a LinkedIn account.
+Configure authentication for LinkedIn API.
 
 Steps:
 
-Copy Client ID and Client Secret from LinkedIn Developer App
+Copy Client ID
 
-Add them to n8n LinkedIn credentials
+Copy Client Secret
 
-Add the OAuth Redirect URL from n8n into LinkedIn App settings
+Paste them into n8n LinkedIn credentials
 
-6. Auto Publish to LinkedIn
+Add the OAuth Redirect URL from n8n to LinkedIn App settings
 
-The final step automatically posts the generated content.
+6️⃣ Auto Post to LinkedIn
 
-LinkedIn Node Configuration
+Add a LinkedIn Node in the workflow.
+
+Configuration
 
 Operation → Create Post
 
 Select LinkedIn account
 
-Use AI-generated content as the post text
+Add the AI-generated text
 
-Once the workflow runs, the post is automatically published to LinkedIn.
+The workflow automatically publishes the post to LinkedIn.
 
-Technologies Used
+🔄 Workflow Architecture
+Google Sheets
+      ↓
+AI Article Summary (Gemini)
+      ↓
+LinkedIn Content Generator
+      ↓
+LinkedIn Auto Post
+🛠 Technologies Used
 
-n8n – Workflow automation platform
+n8n – Workflow Automation
 
-Google Gemini AI – Content summarization & generation
+Google Gemini – AI Content Generation
 
-LinkedIn API – Social media publishing
+LinkedIn API – Social Media Posting
 
-Google Sheets – Data trigger source
+Google Sheets – Data Trigger Source
 
-Future Improvements
+🚀 Future Improvements
 
-Multi-platform posting (Twitter, Instagram, Medium)
+Multi-platform posting
 
-AI-powered content scheduling
+Content scheduling
 
-Performance analytics tracking
+Analytics tracking
 
-Multi-post batch automation
-
-Image generation for posts
-
-Use Case
-
-This system is ideal for:
-
-Content creators
-
-Digital marketers
-
-AI enthusiasts
-
-Social media managers
-
-Businesses automating LinkedIn content
-
-It reduces manual effort while maintaining consistent, high-quality social media content.
+Multi-post automation
